@@ -13,11 +13,11 @@ export function json2table100(json: any): string {
         });
         bodyRows += "</tr>";
     });
-    return "<table><thead><tr>" +
+    return "<table class='table table-striped'><thead><tr>" +
         headerRow +
-        "</tr></thead><tbody>" +
+        "</tr></thead><tbody >" +
         bodyRows +
-        "</tbody></table>";
+        "</tbody ></table>";
 }
 
 export function capitalizeFirstLetter(str: string): string {
