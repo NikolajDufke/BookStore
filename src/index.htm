@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en-US">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Coding Template</title>
@@ -8,25 +9,38 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
-<body >
-  <div class="container" >
-  <h1>Webpack - TypeScript - Scss</h1>
-  <h2>TypeScript BookStore</h2>  
+<body>
+  <div class="container">
+    <h1>Webpack - TypeScript - Scss</h1>
+    <h2>TypeScript BookStore</h2>
 
-  <div id="content"></div>
-    
-  <div id="newBook">
+    <div id="app">
+     
+      <div id="content"></div>
+      <div id="newBook">
+      </div>
+      <button id="addButton" v-on:click="addBook" type="button" class="btn btn-dark">Add</button>
+      <div id="deleteBook">
+      </div>
+      <button id="deleteButton" v-on:click="deleteBook" type="button" class="btn btn-dark">Delete</button>
+
+      <div id="table_content">
+      </div>
+   
+      <p>List of Books in store</p>
+      <ul class="list-group">
+        <li class="list-group-item" v-for="book in Books">
+          {{book.id}} {{book.title}} {{book.author}}
+        </li>  
+      </ul>
+
+    </div>
   </div>
-  <button id="addButton" type="button" class="btn btn-dark">Add</button>
-  <div id="deleteBook">
-  </div>
-  <button id="deleteButton" type="button" class="btn btn-dark">Delete</button>
-  
-  <div id="table_content">
-  </div> 
   <script src="bundle.js"></script>
-</div>
 </body>
+
 </html>
